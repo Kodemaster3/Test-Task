@@ -1,6 +1,5 @@
 class TaskSecond
   def some_method(text)
-    words = []
     words = text.downcase.chomp.gsub(/[.,\/#!$%\^&\*;:{}=\-_~()?]/,"").split(" ")
     wo_re = {}
     i = 0
