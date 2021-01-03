@@ -13,7 +13,7 @@ class TaskSecond
       i += 1
     end
 
-    if wo_re.size == words.size || words.size - wo_re.invert.size < 3
+    if wo_re.size == words.size || words.size - wo_re.size < 3
       puts "Текст содержит меньше трёх уникальных слов"
     else
       wor_e = wo_re.sort_by{ |key, value| value}
