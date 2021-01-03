@@ -23,7 +23,6 @@ def encrypt(text, n)
     print " \-\> \"#{encrypted_text}\""
     text = encrypted_text
     n-= 1
-    return encrypted_text
   end
 end
 def decrypt(encrypted_text, n)
@@ -55,9 +54,7 @@ def decrypt(encrypted_text, n)
     print " \-\> \"#{text}\""
     encrypted_text = text
     n -= 1
-    return text
   end
-
 end
 def scan_text(text)
   words = text.downcase.chomp.gsub(/[.,\/#!$%\^&\*;:{}=\-_~()?]/,"").split(" ")
@@ -72,12 +69,11 @@ def scan_text(text)
     i += 1
   end
   if wo_re.size == words.size || words.size - wo_re.size < 3
-    puts "Текст содержит меньше трёх уникальных слов"
+    puts "The text contains less than three unique words"
     return words = nil
   else
     wor_e = wo_re.sort_by{ |key, value| value}
     bufer_1 = wor_e[-1][0] + ", " + wor_e[-2][0] + ", " + wor_e[-3][0]
     print bufer_1
-    return bufer_1
   end
 end
