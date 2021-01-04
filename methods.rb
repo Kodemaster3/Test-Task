@@ -57,7 +57,7 @@ def decrypt(encrypted_text, n)
   end
 end
 def scan_text(text)
-  words = text.chomp.gsub(/[.,@|\[\]\/#!$%\^&\*;:{}=\-_~()?1234567890qwertyuiopasdfghjklzxcvbnm]/,"").downcase.split(" ")
+  words = text.chomp.gsub(/[.,@|\[\]\/#!$%^\+&\*;:{}=\-_~()?\da-z]/,"").downcase.split(" ")
   wo_re = {}
   i = 0
   while i < words.size do
