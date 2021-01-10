@@ -57,8 +57,17 @@ def decrypt(encrypted_text, n)
   end
 end
 def scan_text(text)
-  words = text.chomp.gsub(/[.,@|\[\]\/#!$%^\+&\*;:{}=\-_~()?\da-z]/,"").downcase.split(" ")
+  words = ""
+  buffer_text = ""
   wo_re = {}
+  i = 0
+  while i < text.size
+    if text[i].to_s == text[i].match(/[ A-Z']/).to_s
+      buffer_text += text[i]
+    end
+    i += 1
+  end
+  words = buffer_text.downcase.split(" ")
   i = 0
   while i < words.size do
     unless wo_re.key?(words[i])
@@ -75,5 +84,6 @@ def scan_text(text)
     wor_e = wo_re.sort_by{ |key, value| value}
     bufer_1 = wor_e[-1][0] + ", " + wor_e[-2][0] + ", " + wor_e[-3][0]
     print bufer_1
+    return bufer_1
   end
 end

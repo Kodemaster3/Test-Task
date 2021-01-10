@@ -24,7 +24,7 @@ if choice_first == 1
   end
 elsif choice_first == 2
   print "Write text\n"
-  text = gets
+  text = gets.to_s
   scan_text(text)
 else
   puts "Try again :)"
